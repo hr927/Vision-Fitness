@@ -22,8 +22,10 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -97,8 +99,11 @@ export default function Navbar() {
             _hover={{
               bg: "teal.400",
             }}
+            onClick={() => {
+              navigate("/signup");
+            }}
           >
-            Sign Up
+            Join Now
           </Button>
         </Stack>
       </Flex>

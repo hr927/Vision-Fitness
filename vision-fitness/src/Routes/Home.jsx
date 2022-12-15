@@ -13,10 +13,9 @@ import {
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
-    <>
+    <Container maxW={"8xl"} paddingTop={"90px"}>
       <SimpleGrid
         maxW={"8xl"}
-        paddingTop={"90px"}
         columns={{ md: 1, lg: 2 }}
         spacing={10}
         bgColor="
@@ -425,7 +424,7 @@ const Home = () => {
           View All Programs
         </Text>
       </Container>
-    </>
+    </Container>
   );
 };
 export default Home;
