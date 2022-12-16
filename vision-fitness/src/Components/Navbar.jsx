@@ -278,7 +278,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "WORKOUTS",
-    href: "/workouts",
+    href: "/workout",
     children: [
       {
         label: "WORKOUT VIDEOS",
@@ -292,7 +292,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "PROGRAMS",
-    href: "/programs",
+    href: "/program",
     children: [
       {
         label: "WORKOUT PROGRAMS",
