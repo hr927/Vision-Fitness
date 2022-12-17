@@ -21,7 +21,7 @@ export default function Login() {
   const [pass, setPass] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  const { login, currentUser } = useAuth();
   const navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
@@ -31,6 +31,7 @@ export default function Login() {
     try {
       setLoading(true);
       await login(email, pass);
+
       navigate("/");
     } catch (err) {
       console.log(err);

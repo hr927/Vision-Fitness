@@ -23,11 +23,25 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
+import { useState } from "react";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const { isOpen, onToggle } = useDisclosure();
+  const { logout } = useAuth();
+  const [btn, setBtn] = useState("Sign In");
 
+  const handleClick = () => {
+    if (btn === "Sign In") {
+      navigate("/login");
+      setBtn("Logout");
+    } else {
+      logout();
+      alert("You have been logged out");
+      setBtn("Sign In");
+    }
+  };
   return (
     <Box>
       <Flex
@@ -84,10 +98,11 @@ export default function Navbar() {
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
-            variant={"link"}
-            href={"#"}
+            onClick={() => {
+              handleClick();
+            }}
           >
-            Sign In
+            {btn}
           </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
@@ -206,6 +221,7 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
+      pt={100}
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
