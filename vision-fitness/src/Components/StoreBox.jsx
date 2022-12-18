@@ -6,7 +6,7 @@ function StoreBox({ image, title, subtitle, detail, id }) {
   return (
     <Box
       _hover={{ border: "2px", borderColor: "#4296cb" }}
-      onClick={() => navigate(`/program/${id}`)}
+      // onClick={() => navigate(`/program/${id}`)}
       textAlign={"left"}
       bgColor={"white"}
     >
@@ -20,7 +20,14 @@ function StoreBox({ image, title, subtitle, detail, id }) {
         </Text>
         <HStack justifyContent={"space-between"}>
           {" "}
-          <Text>₹{subtitle}</Text> <Button>ADD TO BAG</Button>
+          <Text>₹{subtitle}</Text>{" "}
+          <Button
+            onClick={() => {
+              return alert("Added to bag");
+            }}
+          >
+            ADD TO BAG
+          </Button>
         </HStack>
       </Stack>
     </Box>

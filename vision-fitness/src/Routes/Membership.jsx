@@ -16,8 +16,10 @@ import {
   Divider,
   Stack,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Membership = () => {
+  const navigate = useNavigate();
   return (
     <Container maxW={"10xl"} paddingTop={"90px"}>
       <SimpleGrid
@@ -75,6 +77,9 @@ const Membership = () => {
             bg={"black"}
             marginTop={"20px 0px"}
             _hover={{ bg: "blue.700" }}
+            onClick={() => {
+              navigate("/signup");
+            }}
           >
             JOIN WITH PLUS
           </Button>
@@ -105,6 +110,9 @@ const Membership = () => {
             bg={"black"}
             marginTop={"20px 0px"}
             _hover={{ bg: "blue.700" }}
+            onClick={() => {
+              navigate("/signup");
+            }}
           >
             JOIN FOR FREE
           </Button>
@@ -683,6 +691,9 @@ const Membership = () => {
             bg={"black"}
             marginTop={"20px 0px"}
             _hover={{ bg: "blue.700" }}
+            onClick={() => {
+              navigate("/store");
+            }}
           >
             BUY A PASS
           </Button>

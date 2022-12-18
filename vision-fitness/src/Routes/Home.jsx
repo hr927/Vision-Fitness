@@ -11,7 +11,9 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Container maxW={"8xl"} paddingTop={"90px"}>
       <SimpleGrid
@@ -41,6 +43,9 @@ const Home = () => {
             bg={"black"}
             marginTop={"10px"}
             _hover={{ bg: "blue.700" }}
+            onClick={() => {
+              navigate("/signup");
+            }}
           >
             JOIN NOW
           </Button>
@@ -86,6 +91,9 @@ const Home = () => {
             bg={"black"}
             marginTop={"10px"}
             _hover={{ bg: "blue.700" }}
+            onClick={() => {
+              navigate("/store");
+            }}
           >
             BUY A PASS
           </Button>

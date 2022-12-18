@@ -6,7 +6,7 @@ function ProgramBox({ image, title, subtitle, detail, id }) {
   return (
     <Box
       _hover={{ border: "2px", borderColor: "#4296cb" }}
-      onClick={() => navigate(`/program/${id}`)}
+      // onClick={() => navigate(`/program/${id}`)}
       textAlign={"left"}
       bgColor={"white"}
     >
